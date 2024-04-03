@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart</title>
+    <style>
+      /* Basic CSS for layout */
+      .container {
+        margin-left: 50%;
+        padding: 20px;
+        background-color: #fff;
+        display: inline-block;
+        column-gap: 30px;
+      }
+
+      .cart-item {
+        margin-top: 40px;
+        display: flex;
+        border: 0.5px solid rgba(0, 0, 0, 0.1); /* Transparent border with a slight gap */
+        padding: 10px;
+        width: 600px; /* 50% width with some spacing */
+      }
+
+      .product-image-container {
+        position: relative;
+      }
+
+      .product-image {
+        width: 120px;
+        height: 150px;
+        margin-right: 20px;
+      }
+
+      .product-checkbox {
+        margin-top: 20px;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      .product-details {
+        flex-grow: 1;
+      }
+
+      .product-details h3 {
+        margin: 0;
+      }
+
+      .product-details p {
+        color: #777;
+        margin: 5px 0;
+      }
+
+      .quantity-select {
+        width: 60px;
+      }
+
+      .price {
+        font-weight: bold;
+      }
+
+      .discount {
+        color: #e74c3c;
+        text-decoration: line-through;
+        margin-right: 10px;
+      }
+
+      .discount-percentage {
+        color: #e74c3c;
+      }
+      /* Product Total Styling */
+      .product-total-container {
+        width: 400px;
+        flex-basis: 50%; /* Adjust the width to your preference */
+        padding: 20px;
+        background-color: #fff; /* Set the background color to white */
+        border-left: 1px solid #ddd; /* Add left border */
+        border-top: 1px solid #ddd; /* Add top border */
+        border-radius: 5px;
+        margin-top: 100px;
+        text-align: right;
+      }
+      .total-details {
+        width: 400px;
+        height: 400px;
+        position: relative;
+        text-align: left;
+        height: 300px;
+      }
+
+      .total-heading {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+
+      .checkout-button {
+        background-color: #e74c3c;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .checkout-button:hover {
+        background-color: #c0392b;
+      }
+
+      .cart-cnt {
+        display: inline-flex;
+        align-items: center;
+      }
+
+      /* Checkbox Styles */
+      .checkbox-container {
+        position: relative;
+        top: 10px;
+        left: 0;
+      }
+
+      .selected-items-count {
+        font-weight: bold;
+      }
+
+      /*deliver addres css*/
+      .address-card {
+        display: flex;
+        border: 1px solid #ccc;
+        border-radius: 1px;
+        padding: 20px;
+        max-width: inherit;
+      }
+
+      /* Change Address Button */
+      .change-address-button {
+        color: red;
+        border: 1px solid red;
+        padding: 10px;
+        border-radius: 1px;
+        cursor: pointer;
+        float: inline-end;
+      }
+
+      .address-card div p {
+        margin: 0;
+        padding: 0;
+        font-weight: lighter;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cart-cnt">
+      <div class="container">
+        <div class="address-card">
+          <div style="display: inline-flex; gap: 5px; margin: 0%; padding: 0%">
+            <p>Deliver to:</p>
+            <p><strong>Customer Name</strong></p>
+            <p>12345</p>
+          </div>
+          <div style="display: inline-flex; margin: 0%; padding: 0%">
+            <p>Customer Address: 123 Main St</p>
+            <p>City: Sample City</p>
+            <p>State: CA</p>
+          </div>
+          <button class="change-address-button" style="margin-left: 20px">
+            Change Address
+          </button>
+        </div>
+        <!-- Checkbox to Select All Items -->
+        <div style="display: flex; flex-direction: row">
+          <div class="checkbox-container">
+            <input
+              type="checkbox"
+              class="select-all-checkbox"
+              id="select-all"
+            />
+            <label for="select-all">SELECT All</label>
+            <span class="selected-items-count">0/0 ITEMS SELECTED</span>
+          </div>
+          <div style="position: relative; margin-left: 7rem; padding-top: 13px">
+            <a>REMOVE</a>
+            <span>|</span>
+            <a>MOVE TO WISHLIST</a>
+          </div>
+        </div>
+        <!-- Example Cart Items (Replace with dynamic data from your database) -->
+        <div class="cart-item">
+          <div class="product-image-container">
+            <input type="checkbox" class="product-checkbox" />
+            <img
+              class="product-image"
+              src="../../uploads/img2.webp"
+              alt="Product Image"
+            />
+          </div>
+          <div class="product-details">
+            <h3>Product 1</h3>
+            <p>Description: Lorem ipsum dolor sit amet.</p>
+            <select class="quantity-select">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <!-- Add more quantity options as needed -->
+            </select>
+
+            <select id="size-select" class="quantity-select">
+              <option value="S">S</option>
+              <option value="M">M</option>
+              <option value="L">L</option>
+              <option value="XL">XL</option>
+            </select>
+            <div style="display: flex; gap: 7px">
+              <p class="price">$19.99</p>
+              <p class="MRP">24.99</p>
+              <span class="discount-percentage">-20%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Add more cart items with checkboxes as needed -->
+      </div>
+
+      <!-- Product Total and Checkout Button -->
+      <div class="product-total-container">
+        <div class="total-details">
+          <div class="total-heading">Price Details</div>
+          <p id="selected-item-count">Number of items: <span>0</span></p>
+          <p id="total-mrp">Total MRP: <span>0.00</span></p>
+          <p id="discount-mrp">Discount on MRP: <span>0.00</span></p>
+          <p id="total-amount">Total Amount: <span>0.00</span></p>
+          <button class="checkout-button" onclick="calculateAndInsertData()">
+            Place Order
+          </button>
+        </div>
+      </div>
+    </div>
+    <script>
+      const selectAllCheckbox = document.getElementById("select-all");
+      const productCheckboxes = document.querySelectorAll(".product-checkbox");
+      const selectedItemCount = document
+        .getElementById("selected-item-count")
+        .querySelector("span");
+      const totalMRP = document
+        .getElementById("total-mrp")
+        .querySelector("span");
+      const discountMRP = document
+        .getElementById("discount-mrp")
+        .querySelector("span");
+      const totalAmount = document
+        .getElementById("total-amount")
+        .querySelector("span");
+
+      // Function to calculate and insert data (you can customize this function)
+      function calculateAndInsertData() {
+        let selectedItems = 0;
+        let totalMRPValue = 0;
+        let totalDiscountValue = 0;
+
+        // Iterate through product checkboxes to calculate totals
+        productCheckboxes.forEach((checkbox) => {
+          if (checkbox.checked) {
+            selectedItems++;
+            const cartItem = checkbox.closest(".cart-item");
+            const quantitySelect = cartItem.querySelector(".quantity-select");
+            const mrpValue = parseFloat(
+              cartItem.querySelector(".price").textContent.slice(1)
+            ); // Parse MRP value
+            const discountValue = parseFloat(
+              cartItem.querySelector(".discount-percentage").textContent
+            ); // Parse discount value
+            const quantity = parseFloat(quantitySelect.value); // Parse quantity
+
+            totalMRPValue += mrpValue * quantity;
+            totalDiscountValue += discountValue * quantity;
+          }
+        });
+
+        // Calculate total amount after discount
+        const totalAmountValue = totalMRPValue - totalDiscountValue;
+
+        // Update the HTML elements with calculated values
+        selectedItemCount.textContent = selectedItems;
+        totalMRP.textContent = `${totalMRPValue.toFixed(2)}`;
+        discountMRP.textContent = `${totalDiscountValue.toFixed(2)}`;
+        totalAmount.textContent = `${totalAmountValue.toFixed(2)}`;
+      }
+
+      // Add event listener to "Select All" checkbox
+      selectAllCheckbox.addEventListener("change", function () {
+        const isChecked = this.checked;
+        productCheckboxes.forEach((checkbox) => {
+          checkbox.checked = isChecked;
+        });
+        calculateAndInsertData();
+      });
+
+      // Add event listeners to individual product checkboxes and quantity selects
+      productCheckboxes.forEach((checkbox) => {
+        checkbox.addEventListener("change", calculateAndInsertData);
+      });
+
+      const quantitySelects = document.querySelectorAll(".quantity-select");
+      quantitySelects.forEach((select) => {
+        select.addEventListener("change", calculateAndInsertData);
+      });
+
+      // Function to change the address (replace with your logic)
+      const changeAddressButton = document.querySelector(
+        ".change-address-button"
+      );
+      changeAddressButton.addEventListener("click", function () {
+        // Replace with logic to open a modal or change address fields
+        alert("Change Address button clicked. Implement your logic here.");
+      });
+
+      // Function to remove selected items (replace with your logic)
+      const removeButton = document.querySelector("a:nth-child(1)");
+      removeButton.addEventListener("click", function () {
+        // Replace with logic to remove selected items
+        alert("Remove button clicked. Implement your logic here.");
+      });
+
+      // Function to move selected items to the wishlist (replace with your logic)
+      const moveToWishlistButton = document.querySelector("a:nth-child(3)");
+      moveToWishlistButton.addEventListener("click", function () {
+        // Replace with logic to move selected items to the wishlist
+        alert("Move to Wishlist button clicked. Implement your logic here.");
+      });
+
+      // Function to place an order (replace with your logic)
+      const checkoutButton = document.querySelector(".checkout-button");
+      checkoutButton.addEventListener("click", function () {
+        // Replace with logic to place an order
+        alert("Place Order button clicked. Implement your logic here.");
+      });
+    </script>
+  </body>
+</html>

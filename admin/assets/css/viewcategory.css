@@ -1,0 +1,43 @@
+/* category delete popup */
+.notification {
+  position: fixed;
+  top: 50px;
+  right: -300px;
+  /* Initial position outside the screen */
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  animation: slide-in 0.5s forwards;
+  display: none;
+  /* Initially hidden */
+}
+
+@keyframes slide-in {
+  0% {
+    right: -300px;
+  }
+
+  100% {
+    right: 20px;
+  }
+}
+
+/* notification for adding category  */
+
+.add-category-notification {
+  position: fixed;
+  top: 50px;
+  right: -300px; /* Initial position outside the screen */
+  background-color: #28a745; /* Green for success, can be changed */
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  animation: slide-in 0.5s forwards;
+  display: none;
+  /* Initially hidden */
+}

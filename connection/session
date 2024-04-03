@@ -1,0 +1,40 @@
+<!-- // Inside pages that require authentication (e.g., protected-page.php)
+<?php
+session_start();
+
+// Check if the user is not logged in
+if (!isset($_SESSION["user_email"])) {
+    // Redirect to the login page or display a message
+    header("Location: login.php");
+    exit;
+}
+?>
+
+// Rest of your protected page code
+
+
+
+// Inside your logout.php
+session_start();
+
+// Unset or destroy session variables
+unset($_SESSION["user_email"]); // or session_destroy();
+
+// Redirect to the login page or any other page
+header("Location: login.php");
+exit;
+
+
+
+// Inside a page where you want to display user-specific content
+session_start();
+
+if (isset($_SESSION["user_email"])) {
+// User is logged in, show personalized content
+echo "Welcome, " . $_SESSION["user_email"];
+} else {
+// User is not logged in, display login link or redirect
+echo "Please <a href='login.php'>login</a>";
+} -->
+
+<h1>not logged in please login </h1>

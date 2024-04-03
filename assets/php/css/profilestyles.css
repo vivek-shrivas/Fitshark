@@ -1,0 +1,80 @@
+
+.account-icon {
+    position: relative; /* Ensure proper positioning of submenu */
+  }
+  
+  .submenu-container {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 15vw;
+    height: 17vh;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 1; /* Ensure the submenu is on top */
+  }
+  
+  .account-icon:hover .submenu-container {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+  /* ... rest of your styles ... */
+  
+
+.submenu-container {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 15vw;
+    height: 17vh;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  
+  .account-icon:hover .submenu-container {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+  .dynamic-text {
+    padding: 10px;
+  }
+  
+  .login-signup-btn {
+    display: block;
+    margin: 10px;
+    padding: 5px 15px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .login-signup-btn:hover {
+    border-color: #007bff;
+  }
+  
+  .submenu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .submenu-list li {
+    padding: 8px;
+    border-top: 1px solid #ccc;
+    cursor: pointer;
+  }
+  
+  .submenu-list li:first-child {
+    border-top: none;
+  }
+  

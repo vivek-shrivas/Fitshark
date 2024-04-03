@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Address Form</title>
+    <style>
+      /* Styles for the popup container */
+      .popup {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+      }
+
+      /* Styles for the popup content */
+      .form-popup-content {
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        position: relative;
+        text-align: center;
+        max-width: 400px; /* Adjust the maximum width as needed */
+        width: 100%; /* Adjust the width as needed */
+      }
+
+      /* Close button styles */
+      .close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 20px;
+        cursor: pointer;
+      }
+
+      /* Button styles */
+      .open-popup-button {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      /* Form input styles (customize as needed) */
+      .form-group {
+        margin-bottom: 10px;
+      }
+
+      /* Submit button styles (customize as needed) */
+      .btn {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      /* Responsive styles (customize as needed) */
+      @media screen and (max-width: 600px) {
+        .popup-content {
+          width: 90%;
+        }
+      }
+    </style>
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="styles.css" />
+        <title>Address Form</title>
+      </head>
+      <body>
+        <div class="form-popup-content">
+          <span
+            class="close"
+            id="closePopupButton"
+            onclick="addressclosePopup()"
+            >&times;</span
+          >
+          <h2>Add Address</h2>
+          <form id="updateaddressform">
+            <div class="form-group">
+              <label for="name">Name:</label>
+              <input
+                type="text"
+                id="address-name"
+                name="address-name"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input
+                type="email"
+                id="address-email"
+                name="address-email"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number:</label>
+              <input
+                type="tel"
+                id="address-phone"
+                name="address-phone"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="address-address1">Address Line 1:</label>
+              <input
+                type="text"
+                id="address-address1"
+                name="address1"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="address2">Address Line 2:</label>
+              <input
+                type="text"
+                id="address-address2"
+                name="address-address2"
+              />
+            </div>
+            <div class="form-group">
+              <div class="form-row">
+                <div class="col">
+                  <label for="city">City:</label>
+                  <input
+                    type="text"
+                    id="address-city"
+                    name="address-city"
+                    required
+                  />
+                </div>
+                <div class="col">
+                  <label for="state">State:</label>
+                  <input
+                    type="text"
+                    id="address-state"
+                    name="address-state"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="postal_code">Postal Code:</label>
+              <input
+                type="text"
+                id="address-postal_code"
+                name="postal_code"
+                required
+              />
+            </div>
+            <button type="submit" class="btn">Submit</button>
+          </form>
+        </div>
+      </body>
+    </html>
+  </head>
+</html>

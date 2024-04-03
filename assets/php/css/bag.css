@@ -1,0 +1,241 @@
+.not-logged-in-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12rem;
+  height: 80vh;
+}
+
+.not-bag-cnt {
+  background: white;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  /* padding: 20vh 0; */
+  text-align: center;
+}
+
+.centered-div-not-login-bag {
+  text-align: center;
+}
+
+.not-bag-image {
+  margin-top: 20px;
+  max-width: 100px;
+}
+
+.bag-description {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.not-login-button {
+  margin-top: 20px;
+  border: 1px solid #1d85fc;
+  border-radius: 5px;
+  background-color: white;
+  color: #1d85fc;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.not-login-button:hover {
+  background-color: #1d85fc;
+  color: #fff;
+}
+
+/* logged in wishlist css   */
+/* Basic CSS for layout */
+.b-container {
+  margin-left: 50%;
+  padding: 20px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  column-gap: 30px;
+}
+
+.cart-item {
+  margin-top: 40px;
+  display: flex;
+  border: 0.5px solid rgba(0, 0, 0, 0.1);
+  /* Transparent border with a slight gap */
+  padding: 0px;
+  width: 600px;
+  /* 50% width with some spacing */
+}
+
+.bag-product-image-container {
+  position: relative;
+}
+
+.product-image {
+  width: 120px;
+  height: 150px;
+  margin-right: 20px;
+}
+
+.product-checkbox {
+  margin-top: 4px;
+  position: inherit;
+  top: 0;
+  left: 4px;
+}
+
+.product-details {
+  flex-grow: 1;
+}
+
+.product-details h3 {
+  margin: 0;
+}
+
+.product-details p {
+  color: #777;
+  margin: 5px 0;
+}
+
+.quantity-select {
+  width: 70px;
+  font-size: 12px;
+}
+
+.price {
+  font-weight: bold;
+}
+
+.discount {
+  color: #e74c3c;
+  text-decoration: line-through;
+  margin-right: 10px;
+}
+
+.discount-percentage {
+  color: #e74c3c;
+}
+
+/* Product Total Styling */
+.product-total-container {
+  width: 400px;
+  flex-basis: 50%;
+  /* Adjust the width to your preference */
+  padding: 20px;
+  background-color: #fff;
+  /* Set the background color to white */
+  border-left: 1px solid #ddd;
+  /* Add left border */
+  border-top: 1px solid #ddd;
+  /* Add top border */
+  border-radius: 5px;
+  margin-top: 100px;
+  text-align: right;
+}
+
+.total-details {
+  width: 400px;
+  height: 400px;
+  text-align: left;
+  height: 300px;
+}
+
+.total-heading {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.checkout-button {
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.checkout-button:hover {
+  background-color: #c0392b;
+}
+
+.cart-cnt {
+  display: inline-flex;
+  justify-content: flex-start;
+}
+
+/* Checkbox Styles */
+.checkbox-container {
+  align-items: inherit;
+  position: relative;
+  top: 10px;
+  left: 0;
+}
+
+.selected-items-count {
+  font-weight: bold;
+}
+
+/*deliver addres css*/
+.address-card {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 1px;
+  padding: 20px;
+  max-width: inherit;
+}
+
+.checkbox-container label,
+span {
+  margin-left: 5px;
+}
+/* Change Address Button */
+.change-address-button {
+  margin-top: 20px;
+  color: red;
+  border: 1px solid red;
+  padding: 5px;
+  font-size: smaller;
+  border-radius: 1px;
+  cursor: pointer;
+  float: inline-end;
+  width: 140px;
+  height: 40px;
+  margin-left: 21px;
+}
+
+.address-card div p {
+  margin: 0;
+  padding: 0;
+  font-weight: lighter;
+}
+
+.address {
+  width: 400px;
+}
+
+/* rough styles  */
+
+/* Style for the modal container */
+.form-modal {
+  display: none; /* Hide the modal by default */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4); /* Background color with transparency */
+}
+
+/* Style for the modal content */
+.modal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: fit-content;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}

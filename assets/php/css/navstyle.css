@@ -1,0 +1,237 @@
+/* Reset default styles for body */
+* {
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  text-decoration: none;
+  text-decoration-line: none;
+  padding: 0%;
+  margin: 0%;
+}
+
+/* Popup Styles */
+.profile-popup-container {
+  display: none;
+  position: absolute;
+  background-color: white;
+  padding: 20px;
+  text-align: left;
+  z-index: 9999;
+  width: 16.5rem;
+  border-radius: 5px;
+  opacity: 0;
+  /* Center and position above the profile icon */
+  left: 72%;
+  /* Center horizontally */
+  transition: opacity 0.2s ease-in-out;
+  transform: translateX(calc(100% - 10px)) translateY(calc(10% + 10px));
+}
+
+.profile-login-button {
+  width: fit-content;
+  border-radius: 3px;
+  padding-top: 10px;
+  padding: 7px;
+  /* Add padding as needed */
+  background-color: transparent;
+  border: 0.5px solid #333;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.profile-login-button:hover {
+  background-color: #007bff;
+  /* Change to your desired blue color */
+  color: white;
+  border-color: #007bff;
+}
+
+/* Profile Popup Opening on Hover */
+.login-signup:hover .profile-popup-container {
+  display: block;
+  opacity: 1;
+}
+
+/* Profile Menu Styles */
+.profile-menu {
+  display: flex;
+  list-style: none;
+  position: inherit;
+  margin-right: 2rem;
+}
+.profile-menu-item {
+  margin-top: 0.8rem;
+  margin-left: 2rem;
+}
+
+/* Profile Popup Options */
+.profile-popup-options a {
+  display: block;
+  margin-top: 0.6rem;
+  text-decoration: none;
+  font-size: small;
+}
+
+.profile-popup-options a:hover {
+  font-weight: 600;
+  color: black;
+}
+
+/* Menu Items and Icons */
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+.menu {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+  margin-left: 3rem;
+}
+
+.menu-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.menu-icon img {
+  width: 22px;
+  /* Adjust the size as needed */
+  height: auto;
+  margin: 0;
+  padding: 0;
+  /* Maintain aspect ratio */
+}
+
+.menu-text {
+  font-size: 0.8rem;
+  /* Adjust the font size as needed */
+  margin-top: 2px;
+  color: #000;
+}
+
+.profile-menu-item h6 {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+.profile-menu-item a {
+  text-decoration: none;
+  color: #000;
+}
+.profile-popup-content p {
+  font-size: 0.8rem;
+}
+
+/* Media Queries for Responsive Navigation Bar */
+
+/* Small Screens */
+@media (max-width: 600px) {
+  .header {
+    padding: 10px;
+  }
+
+  /* Adjust logo size */
+  .logo img {
+    max-height: 10vh;
+  }
+
+  /* Adjust menu padding and margin */
+  .menu-container {
+    margin-left: 0.9rem;
+    gap: 0.5;
+  }
+
+  /* Adjust menu item padding and margin */
+  .menu-item {
+    margin: 0 5px;
+    padding-left: 1rem;
+  }
+
+  /* Adjust submenu position and font size */
+  .submenu {
+    font-size: 0.8rem;
+    left: 0;
+    transform: translateX(0) translateY(0);
+  }
+
+  /* Adjust submenu item padding */
+  .submenu-items li a {
+    padding: 0.2rem 0.3rem;
+  }
+
+  /* Adjust profile popup */
+  .profile-popup-container {
+    width: 14rem;
+    transform: translateX(0) translateY(0);
+  }
+
+  /* Adjust profile menu item margin */
+  .profile-menu-item {
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  /* Adjust menu icon size */
+  .menu-icon img {
+    width: 18px;
+  }
+
+  /* Adjust menu text font size */
+  .menu-text {
+    font-size: 0.7rem;
+  }
+}
+
+/* Extra Small Screens */
+@media (max-width: 400px) {
+  .header {
+    padding: 5px;
+  }
+
+  /* Adjust logo size */
+  .logo img {
+    max-height: 8vh;
+  }
+
+  /* Adjust menu padding and margin */
+  .menu-container {
+    margin-left: 5px;
+    gap: 3px;
+  }
+
+  /* Adjust menu item padding and margin */
+  .menu-item {
+    margin: 0 3px;
+    padding-left: 4px;
+  }
+
+  /* Adjust submenu font size */
+  .submenu {
+    font-size: 0.4rem;
+  }
+
+  /* Adjust profile popup */
+  .profile-popup-container {
+    width: 10rem;
+  }
+
+  /* Adjust profile menu item margin */
+  .profile-menu-item {
+    margin-left: 0.2rem;
+  }
+
+  /* Adjust menu icon size */
+  .menu-icon img {
+    width: 10px;
+  }
+
+  /* Adjust menu text font size */
+  .menu-text {
+    font-size: 0.6rem;
+  }
+}

@@ -1,0 +1,57 @@
+* {
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+  text-decoration: none !important;
+  text-decoration-line: none !important;
+  padding: 0%;
+  margin: 0%;
+}
+
+body {
+  margin: 0%;
+  padding: 0%;
+}
+#carouselExampleIndicators {
+  position: relative;
+  z-index: -1;
+}
+
+.carousel-item {
+  max-height: 50vh;
+  max-width: 100vw;
+  padding: 0;
+  margin: 0%;
+}
+
+.carousel-item img {
+  max-height: 50vh;
+  max-width: 100vw;
+}
+
+/* The main container with specified padding */
+.flex-container {
+  margin-top: 50px;
+  padding: 30px 100px;
+  display: flex;
+  flex-wrap: wrap; /* Allow the contents to wrap when there is not enough space */
+  justify-content: flex-start; /* Start the contents from the left */
+  align-items: flex-start; /* Align the contents at the top */
+  background-color: rgb(255, 251, 251);
+}
+
+/* Adjust the flex container when the screen size is smaller */
+@media screen and (max-width: 768px) {
+  .flex-container {
+    padding: 15px 25px; /* Reduce padding for smaller screens */
+  }
+}
+
+.content {
+  margin-top: auto;
+  height: fit-content;
+  width: fit-content;
+}
+
+.banner-text-home {
+  padding-top: 300px;
+  padding-left: 70px;
+}
